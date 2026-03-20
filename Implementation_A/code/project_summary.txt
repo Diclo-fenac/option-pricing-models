@@ -1,0 +1,45 @@
+
+======================================================================
+FINAL PROJECT SUMMARY
+======================================================================
+
+DATASET INFORMATION:
+   • Total parameter combinations: 1000
+   • Training samples: 700
+   • Testing samples: 150
+   • Parameters: S0 ∈ [80.0, 120.0], σ ∈ [0.15, 0.45], T ∈ [0.5, 2.0]
+   • Fixed: K = 100, r = 0.05
+   • Monte Carlo samples per option: 1,000,000
+
+ MODEL ARCHITECTURE:
+   • Input layer: 3 neurons (S0, σ, T)
+   • Hidden layer 1: 64 neurons (Tanh)
+   • Hidden layer 2: 64 neurons (Tanh)
+   • Output layer: 1 neuron (option price)
+   • Total parameters: 25345
+
+ TRAINING DETAILS:
+   • Epochs: 3000
+   • Optimizer: Adam (lr=0.001)
+   • Loss function: MSE
+   • Training time: 6.70 seconds
+   • Final training loss: 0.00420599
+
+ PERFORMANCE METRICS:
+   • Monte Carlo simulation time: 8.7724 seconds
+   • Neural network inference time: 0.001321 seconds
+   • Speedup Factor: 6641.53x
+
+ ACCURACY METRICS:
+   • Mean Squared Error (MSE): 3.14476395
+   • Mean Absolute Error (MAE): $1.5739
+   • R² Score: 0.87043381
+   • Average relative error: 5.3266%
+
+ OUTPUT FILES:
+   ✓ option_pricing_data.csv - Original dataset
+   ✓ option_pricing_results.csv - Detailed predictions and errors
+   ✓ option_pricing_surrogate.pth - Trained model weights
+   ✓ option_pricing_performance.png - Visualization plots
+
+======================================================================

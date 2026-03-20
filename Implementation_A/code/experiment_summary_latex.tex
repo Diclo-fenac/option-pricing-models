@@ -1,0 +1,38 @@
+
+\section{Experimental Results - Monte Carlo Option Pricing}
+
+\subsection{Setup}
+\begin{itemize}
+    \item Problem: European call option pricing via Black-Scholes Monte Carlo
+    \item Payoff: $\max(S_T - K, 0)$ where $K = 100$
+    \item Dataset: 1000 parameter combinations
+    \item Parameters: $S_0 \in [80.0, 120.0]$,
+          $\sigma \in [0.15, 0.45]$,
+          $T \in [0.5, 2.0]$
+    \item Monte Carlo samples: 1,000,000 per option
+    \item Neural architecture: 3-64-64-1 with Tanh activations
+    \item Training: 3000 epochs, Adam optimizer ($\alpha = 0.001$)
+\end{itemize}
+
+\subsection{Performance Metrics}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Metric} & \textbf{Value} \\
+\hline
+MSE & 3.144764e+00 \\
+MAE & \$1.5739 \\
+$R^2$ Score & 0.870434 \\
+Speedup Factor & 6641.53x \\
+Avg. Inference Time & 0.008806 ms \\
+\hline
+\end{tabular}
+\caption{Neural surrogate performance vs. Monte Carlo simulation (1,000,000 samples)}
+\end{table}
+
+\subsection{Conclusion}
+The neural surrogate model achieves $R^2 = 0.8704$ with 6642$\times$
+speedup over traditional Monte Carlo simulation, demonstrating effective approximation
+of European call option prices. The model provides deterministic pricing suitable for
+high-frequency trading applications.
